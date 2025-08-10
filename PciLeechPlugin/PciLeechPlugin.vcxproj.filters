@@ -12,15 +12,9 @@
     <ClInclude Include="resource.h">
       <Filter>Resources</Filter>
     </ClInclude>
-    <ClInclude Include="ReClassNET_Plugin.hpp">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="vmmdll.h">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="leechcore.h">
-      <Filter>Resources</Filter>
-    </ClInclude>
+    <ClInclude Include="ReClassNET_Plugin.hpp" />
+    <ClInclude Include="leechcore.h" />
+    <ClInclude Include="vmmdll.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="exports.def">
