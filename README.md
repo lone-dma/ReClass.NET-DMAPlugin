@@ -1,17 +1,12 @@
-# ReClass.NET-PciLeechPlugin
-A plugin that integrates vmm.dll from the https://github.com/ufrisk/MemProcFS project to allow ReClass.NET to function over a PCIe FPGA device.
+# ReClass.NET-DMAPlugin
+A plugin that integrates with the [MemProcFS (PCILeech)](https://github.com/ufrisk/MemProcFS) project to allow ReClass.NET to function over a FPGA device.
 
 ## Notes on this fork
 - Updated for MemProcFS v5.15
 
 ## Usage
 
-* Copy `PciLeechPlugin.dll` into the ReClass.NET\x64\Plugins directory
-* Copy `leechcore.dll`, `vmm.dll`, `FTD3XX.dll`, and `mmap.txt` from MemProcFS into the ReClass.NET\x64 directory
+* Copy `PciLeechPlugin.dll` into the ReClass.NET\Plugins directory
+* Copy the other native files into the CWD (Current Working Directory, usually where ReClass.NET is stored).
 * Open Reclass.NET, go to File -> Plugins
 * Switch to the Native Helper tab and change the Functions Provider from Default to PciLeechPlugin
-
-## Building
-
-* Put this project in the same root directory as the ReClass.NET project
-* Copy `leechcore.h`, `vmmdll.h` and `vmm.lib` from MemProcFS into the PciLeechPlugin directory
