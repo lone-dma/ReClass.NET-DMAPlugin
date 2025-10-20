@@ -26,4 +26,14 @@
       <Filter>Resources</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="..\native\dbghelp.dll" />
+    <CopyFileToFolders Include="..\native\FTD3XX.dll" />
+    <CopyFileToFolders Include="..\native\leechcore.dll" />
+    <CopyFileToFolders Include="..\native\leechcore_driver.dll" />
+    <CopyFileToFolders Include="..\native\symsrv.dll" />
+    <CopyFileToFolders Include="..\native\tinylz4.dll" />
+    <CopyFileToFolders Include="..\native\vcruntime140.dll" />
+    <CopyFileToFolders Include="..\native\vmm.dll" />
+  </ItemGroup>
 </Project>
