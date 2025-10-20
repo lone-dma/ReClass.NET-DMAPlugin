@@ -6,7 +6,7 @@ A plugin that integrates with the [MemProcFS (PCILeech)](https://github.com/ufri
 
 ## Usage
 
-* Copy `PciLeechPlugin.dll` into the ReClass.NET\Plugins directory
+* Copy `VmmPlugin.dll` into the ReClass.NET\Plugins directory
 * Copy the other native files into the CWD (Current Working Directory, usually where ReClass.NET is stored).
 * Open Reclass.NET, go to File -> Plugins
 * Switch to the Native Helper tab and change the Functions Provider from Default to PciLeechPlugin
