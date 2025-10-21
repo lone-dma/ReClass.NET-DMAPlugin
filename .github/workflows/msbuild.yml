@@ -1,4 +1,4 @@
-name: MSBuild
+name: Deploy latest version to Github Releases
 
 on:
   push:
@@ -15,7 +15,7 @@ env:
   BUILD_CONFIGURATION: Release
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -32,7 +32,23 @@ jobs:
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
     - name: Build
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      # Add additional options to the MSBuild command line here (like platform or verbosity level).
-      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}} /p:OutDir=out
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+      run: |
+        msbuild `
+          /m `
+          /p:Configuration=${{ env.BUILD_CONFIGURATION }} `
+          /p:Platform=x64 `
+          /p:OutDir="${{ env.GITHUB_WORKSPACE }}\out\\" `
+          ${{ env.SOLUTION_FILE_PATH }}
+
+    - name: Archive build output
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+      run: |
+        cd "${{ env.GITHUB_WORKSPACE }}\out\\"
+        Compress-Archive -Path * -DestinationPath "ReClass.NET-DMAPlugin.zip" -Force
+        
+    - name: Upload to "latest" release (overwrite old asset)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release upload latest "${{ env.GITHUB_WORKSPACE }}\out\\ReClass.NET-DMAPlugin.zip" --clobber
