@@ -51,4 +51,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        gh release upload latest ReClass.NET-DMAPlugin.zip --clobber
+        gh release upload latest "${{ env.GITHUB_WORKSPACE }}\out\\ReClass.NET-DMAPlugin.zip" --clobber
