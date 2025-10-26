@@ -19,6 +19,7 @@ permissions:
 
 jobs:
   build:
+    environment: production
     runs-on: windows-latest
 
     steps:
