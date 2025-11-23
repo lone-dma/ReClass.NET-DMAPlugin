@@ -2,6 +2,7 @@
 A plugin that integrates with the [MemProcFS (PCILeech)](https://github.com/ufrisk/MemProcFS) project to allow ReClass.NET to function over a FPGA device.
 
 ## Notes on this fork
+- Thanks to mgoodings for the original (https://github.com/mgoodings/ReClass.NET-PciLeechPlugin)
 - Updated for MemProcFS v5.16.3 (Supports Win11 25h2)
 
 ## Usage
